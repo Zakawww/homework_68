@@ -26,6 +26,7 @@ class IndexView(ListView):
         self.form = self.get_search_form()
         self.search_value = self.get_search_value()
         return super().get(request, *args, **kwargs)
+        # return JsonResponse({'test': 1, 'test2': [1, 2, 3]})
 
     def get_queryset(self):
         if self.search_value:
