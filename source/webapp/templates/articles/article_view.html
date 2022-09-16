@@ -40,10 +40,7 @@
                     <div class="btn-group w-100" role="group" aria-label="Basic mixed styles example">
                         <a class="btn btn-danger" href="{% url "webapp:update_comment" comment.pk %}">Изменить</a>
                         <a class="btn btn-warning" href="{% url "webapp:delete_comment" comment.pk %}">Удалить</a>
-{#                        <a class="btn btn-info" id="button" data-articles-link="{% url "webapp:index" %}">Likes</a>#}
-{#                        <button class="btn btn-info"  onclick="like({{ comment.pk }})" id="like_{{ comment.pk }}">Лайк</button>#}
-{#                        <button class="btn btn-info" onclick="dizlike({{ comment.pk }})" id="dizlike_{{ comment.pk }}">Дизлайк</button>#}
-
+                       <button  id="button" data-comments-link="{% url "webapp:index" %} {{ comment.pk }}">Likes</button>
                     </div>
                 </div>
             </div>
