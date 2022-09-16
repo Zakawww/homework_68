@@ -1,13 +1,13 @@
 from django.http import JsonResponse
 from django.views.generic.base import View
 
-from source.webapp.models import Article, Comment
+from webapp.models import Article, Comment
 
 
 class ArticleLikes(View):
     def get(self, request, *args, **kwargs):
         article = Article.objects.get(pk=kwargs.get('pk'))
-        user = request.user
+        user = self.request.user
         if user not in article.likes.all():
             article.likes.add(user)
             return JsonResponse({'likes': article.likes.all().count(), 'pk': article.pk})
@@ -15,7 +15,7 @@ class ArticleLikes(View):
         return JsonResponse({'dislikes': article.likes.all().count(), 'pk': article.pk})
 
 
-class CommentLike(View):
+class CommentLikes(View):
     def get(self, request, *args, **kwargs):
         comment = Comment.objects.get(pk=kwargs.get('pk'))
         user = request.user
