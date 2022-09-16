@@ -5,9 +5,15 @@ async function buttonClick(event) {
     console.log(url)
     let response = await fetch(url);
     let articles_json = await response.json()
-    console.log(articles_json)
+    let button = document.getElementById('button')
 
-
+    if (articles_json?.likes === 1) {
+        button.classList.remove('btn-info')
+        button.classList.add('btn-success')
+    } else {
+        button.classList.remove('btn-success')
+        button.classList.add('btn-info')
+    }
 }
 
 async function buttonClickCom(event) {
@@ -17,83 +23,25 @@ async function buttonClickCom(event) {
     console.log(url)
     let response = await fetch(url);
     let comments_json = await response.json()
-    console.log(comments_json)
 
-
+    let button_c = document.getElementById('button_c')
+    if (comments_json?.likes === 1) {
+        button_c.classList.remove('btn-info')
+        button_c.classList.add('btn-success')
+    } else {
+        button_c.classList.remove('btn-success')
+        button_c.classList.add('btn-info')
+    }
 }
 
-function getArticles() {
-    // let button = document.getElementById('button')
+async function getArticles() {
     let button = document.getElementById('button')
     let button_c = document.getElementById('button_c')
+
     button.addEventListener('click', buttonClick)
     button_c.addEventListener('click', buttonClickCom)
-    // button.onclick(buttonClick)
 
 }
 
 window.addEventListener('load', getArticles)
 
-
-
-//
-// function like(comment_pk) {
-//     const csrftoken = getCookie('csrftoken')
-//     $.ajax({
-//         url: `http://localhost:8000/api/like/${comment_pk}/`,
-//         method: 'POST',
-//         headers: {'X-CSRFToken': csrftoken},
-//         contentType: 'application/json',
-//         dataType: 'json',
-//         success: function (response, status) {
-//             const like_btn = $(`#like_${comment_pk}`)
-//             const dizlike_btn = $(`#dizlike_${comment_pk}`)
-//             const likes = $(`#likes_${comment_pk}`)
-//             likes.text(response.rating)
-//             like_btn.addClass('d-none')
-//             dizlike_btn.removeClass('d-none')
-//
-//         },
-//         error: function (response, status) {
-//             console.log(response)
-//         }
-//     })
-// }
-//
-// function dizlike(comment_pk) {
-//     const csrftoken = getCookie('csrftoken')
-//     $.ajax({
-//         url: `http://localhost:8000/api/dizlike/${comment_pk}/`,
-//         method: 'POST',
-//         headers: {'X-CSRFToken': csrftoken},
-//         contentType: 'application/json',
-//         dataType: 'json',
-//         success: function (response, status) {
-//             const like_btn = $(`#like_${comment_pk}`)
-//             const dizlike_btn = $(`#dizlike_${comment_pk}`)
-//             const likes = $(`#likes_${comment_pk}`)
-//             likes.text(response.rating)
-//             like_btn.removeClass('d-none')
-//             dizlike_btn.addClass('d-none')
-//         },
-//         error: function (response, status) {
-//             console.log(response)
-//         }
-//     })
-// }
-//
-// function getCookie(name) {
-//     var cookieValue = null;
-//     if (document.cookie && document.cookie !== '') {
-//         var cookies = document.cookie.split(';');
-//         for (var i = 0; i < cookies.length; i++) {
-//             var cookie = cookies[i].trim();
-//             // Does this cookie string begin with the name we want?
-//             if (cookie.substring(0, name.length + 1) === (name + '=')) {
-//                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-//                 break;
-//             }
-//         }
-//     }
-//     return cookieValue;
-// }

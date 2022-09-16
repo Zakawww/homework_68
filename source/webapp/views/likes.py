@@ -12,7 +12,7 @@ class ArticleLikes(View):
             article.likes.add(user)
             return JsonResponse({'likes': article.likes.all().count(), 'pk': article.pk})
         article.likes.remove(user)
-        return JsonResponse({'dislikes': article.likes.all().count(), 'pk': article.pk})
+        return JsonResponse({'likes': article.likes.all().count(), 'pk': article.pk})
 
 
 class CommentLikes(View):
@@ -23,4 +23,4 @@ class CommentLikes(View):
             comment.likes.add(user)
             return JsonResponse({'likes': comment.likes.all().count(), 'pk': comment.pk})
         comment.likes.remove(user)
-        return JsonResponse({'dislikes': comment.likes.all().count(), 'pk': comment.pk})
+        return JsonResponse({'likes': comment.likes.all().count(), 'pk': comment.pk})
