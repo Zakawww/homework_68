@@ -6,7 +6,18 @@ async function buttonClick(event) {
     let response = await fetch(url);
     let articles_json = await response.json()
     console.log(articles_json)
-    console.log(articles_json.users)
+
+
+}
+
+async function buttonClickCom(event) {
+    event.preventDefault()
+    let target = event.target
+    let url = target.dataset.commentsLink;
+    console.log(url)
+    let response = await fetch(url);
+    let comments_json = await response.json()
+    console.log(comments_json)
 
 
 }
@@ -14,7 +25,9 @@ async function buttonClick(event) {
 function getArticles() {
     // let button = document.getElementById('button')
     let button = document.getElementById('button')
+    let button_c = document.getElementById('button_c')
     button.addEventListener('click', buttonClick)
+    button_c.addEventListener('click', buttonClickCom)
     // button.onclick(buttonClick)
 
 }

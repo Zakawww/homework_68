@@ -18,7 +18,7 @@ urlpatterns = [
     path('article/<int:pk>/comment/add/', CreateCommentView.as_view(), name="article_comment_create"),
     path('comments/<int:pk>/update/', UpdateComment.as_view(), name="update_comment"),
     path('comments/<int:pk>/delete/', DeleteComment.as_view(), name="delete_comment"),
-    # path('like_art/<int:pk>/', ArticleLikes.as_view(), name='like_article'),
-    # path('like_com/<int:pk>/', CommentLikes.as_view(), name='like_comment'),
+    path('like/<int:pk>/', ArticleLikes.as_view(), name='like_article'),
+    path('like_com/<int:pk>/', CommentLikes.as_view(), name='like_comment'),
 
 ]

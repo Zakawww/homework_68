@@ -24,7 +24,7 @@ class Article(BaseModel):
     tags = models.ManyToManyField("webapp.Tag", related_name="articles", blank=True)
     author = models.ForeignKey(get_user_model(), related_name="articles", verbose_name="Автор", default=1,
                                on_delete=models.SET_DEFAULT)
-    likes = models.ManyToManyField(get_user_model(), related_name="likes", verbose_name='Лайки')
+    likes = models.ManyToManyField(get_user_model(), verbose_name='Лайки')
 
     def __str__(self):
         return f"{self.id}. {self.title}: {self.author.username}"
