@@ -8,7 +8,8 @@
     "title": "Статья5",
     "content": "Контент5",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -20,7 +21,8 @@
     "title": "Статья6",
     "content": "Контент6",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -32,7 +34,8 @@
     "title": "Статья7",
     "content": "Контент7",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -44,7 +47,8 @@
     "title": "Articl1",
     "content": "vsdvds",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -56,7 +60,8 @@
     "title": "Articl2",
     "content": "vdfvfs",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -68,7 +73,8 @@
     "title": "Articl3",
     "content": "cdscds",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -80,7 +86,8 @@
     "title": "ggggg",
     "content": "gggggg",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -92,7 +99,8 @@
     "title": "vdsvds",
     "content": "vdsvdsvds",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -104,7 +112,8 @@
     "title": "gergre",
     "content": "greger",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -116,7 +125,8 @@
     "title": "gergre",
     "content": "gregerger",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -128,7 +138,8 @@
     "title": "test article",
     "content": "dfbdfbfd",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -140,7 +151,8 @@
     "title": "fefewfew",
     "content": "fwe",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -152,7 +164,8 @@
     "title": "vsdvds",
     "content": "vds",
     "author": 1,
-    "tags": []
+    "tags": [],
+    "likes": []
   }
 },
 {
@@ -166,7 +179,8 @@
     "author": 1,
     "tags": [
       7
-    ]
+    ],
+    "likes": []
   }
 },
 {
@@ -180,6 +194,9 @@
     "author": 1,
     "tags": [
       7
+    ],
+    "likes": [
+      1
     ]
   }
 },
@@ -194,6 +211,26 @@
     "author": 2,
     "tags": [
       7
+    ],
+    "likes": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 47,
+  "fields": {
+    "created_at": "2022-09-16T06:26:23.582Z",
+    "updated_at": "2022-09-16T06:26:23.582Z",
+    "title": "test",
+    "content": "wwwwwwwwwwwwwwwwwwww",
+    "author": 1,
+    "tags": [
+      8
+    ],
+    "likes": [
+      1
     ]
   }
 },
@@ -202,10 +239,39 @@
   "pk": 1,
   "fields": {
     "created_at": "2022-08-09T15:09:06.630Z",
-    "updated_at": "2022-08-09T15:09:06.630Z",
-    "text": "vrfdvfdvdfvdf",
+    "updated_at": "2022-09-15T11:54:34.596Z",
+    "text": "Комментарий",
     "author": 1,
-    "article": 46
+    "article": 46,
+    "likes": []
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "created_at": "2022-09-16T10:31:47.499Z",
+    "updated_at": "2022-09-16T10:31:47.499Z",
+    "text": "ewwdqwdqdw",
+    "author": 1,
+    "article": 47,
+    "likes": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "created_at": "2022-09-16T10:36:42.322Z",
+    "updated_at": "2022-09-16T10:36:42.322Z",
+    "text": "axaxaxa",
+    "author": 1,
+    "article": 44,
+    "likes": [
+      1
+    ]
   }
 },
 {

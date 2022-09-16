@@ -4,7 +4,7 @@ from django.views.generic import RedirectView
 from webapp.views import IndexView, CreateArticle, ArticleView, UpdateArticle, DeleteArticle, CreateCommentView, \
     UpdateComment, DeleteComment
 
-from source.webapp.views.likes import ArticleLikes, CommentLikes
+from webapp.views.likes import ArticleLikes, CommentLikes
 
 app_name = "webapp"
 
